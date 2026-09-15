@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-fraunces: "Fraunces", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+body {
+  background: #F8F3EC;
+  color: #2E2430;
+}
+
+.ticket-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #E5DBD3;
+  border-radius: 4px;
+  display: flex;
+  overflow: hidden;
+}
+
+.ticket-card .stub {
+  position: relative;
+  background: #3D2B3D;
+  color: #F8F3EC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.75rem;
+  min-width: 84px;
+}
+
+.ticket-card .perforation {
+  position: relative;
+  width: 0;
+  border-left: 1.5px dashed #DCD0C6;
+}
+
+.ticket-card .perforation::before,
+.ticket-card .perforation::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  background: #F8F3EC;
+  border-radius: 50%;
+}
+.ticket-card .perforation::before { top: -8px; }
+.ticket-card .perforation::after { bottom: -8px; }
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px 6px 3px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-family: var(--font-inter);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.1s ease;
+  user-select: none;
+  position: relative;
+}
+.seat:active { transform: scale(0.94); }
+
+.seat-available {
+  background: #fff;
+  border-color: #2F9E6E;
+  color: #1C6B48;
+}
+.seat-available:hover { background: #EAF7F1; }
+
+.seat-vip {
+  background: #fff;
+  border-color: #C9A24B;
+  color: #8A6B26;
+}
+.seat-vip:hover { background: #FBF3E1; }
+
+.seat-selected {
+  background: #B08296;
+  border-color: #8C5D71;
+  color: #fff;
+  font-weight: 600;
+}
+
+.seat-held {
+  background: repeating-linear-gradient(
+    45deg,
+    #F3DCB8,
+    #F3DCB8 4px,
+    #EACB9B 4px,
+    #EACB9B 8px
+  );
+  border-color: #D99A5B;
+  color: #8A5A22;
+  cursor: not-allowed;
+}
+
+.seat-booked {
+  background: repeating-linear-gradient(
+    45deg,
+    #C9C0C4,
+    #C9C0C4 4px,
+    #BBB0B5 4px,
+    #BBB0B5 8px
+  );
+  border-color: #A99DA3;
+  color: #5C5158;
+  cursor: not-allowed;
+}
