@@ -1,4 +1,4 @@
-# Stagehand — a mini BookMyShow
+# Stagehand — an event booking app.
 
 Create events, get an auto-generated seat grid, and let logged-in users book
 up to 4 seats each without ever double-booking a seat.
